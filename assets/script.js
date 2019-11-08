@@ -11,7 +11,7 @@
 
 // We need a series of questions
 
- // questions
+ // questions stored in questions.js
 
     // followed by events to track answers given via radio dial button thingie?
 
@@ -22,9 +22,3 @@
 // Once complete we need something spit out score!
 
 // And finally something to store the user's score locally!
-
-var str = "What the fucking fuckity fuck?"
-
-var arr = [str]
-
-console.log(arr)
