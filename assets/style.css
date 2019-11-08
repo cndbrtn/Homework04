@@ -1,0 +1,116 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16pt;
+    background-image: url(./img/retro-bg.jpg);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+h1 {
+    font-family: 'Monoton', cursive;
+    color: #ff0080;
+}
+
+#header {
+    position: fixed;
+    top: 0px;
+    left: 10%;
+}
+.wrapper {
+    display: flex;
+    margin-left: 20%;
+    margin-top: 5%;
+    width: 70%;
+}
+
+.content {
+    text-align: center;
+    padding: 100px 20px 100px 20px;
+    margin: 0 auto;
+    background: #8000ff;
+    border-radius: 25px;
+    border: 5px solid #ffff00;
+    margin-right: 40px;
+}
+.scorebox {
+    float: right;
+    padding: 40px;
+    background: #8000ff;
+    border: 5px solid #ffff00;
+    border-radius: 25px;
+}
+
+#startbtn {
+    border: none;
+    border-radius: 35px;
+    padding: 30px 20px 30px 20px;
+    font-size: 18pt;
+    background: #ee82ee;
+    color: #000;
+    font-family: 'Press Start 2P', cursive;
+}
+
+#startbtn:active,
+#highbtn:active {
+    background: #000;
+    color: #fff;
+}
+
+#highbtn {
+    border: none;
+    border-radius: 20px;
+    padding: 20px;
+    font-size: 16pt;
+    font-family: 'Press Start 2P', cursive;
+    background: #8000ff;
+    color: #fff;
+}
+
+#red, 
+#orange, 
+#yellow, 
+#green, 
+#blue, 
+#indigo, 
+#violet {
+    border-radius: 35px;
+    margin: 0 auto;
+}
+
+#red {
+    border: 20px solid red;
+    width: 550px;
+    background: red;
+    box-shadow: 0 0 5px #000;
+}
+
+#orange {
+    border: 20px solid orange;
+    background: orange;
+}
+
+#yellow {
+    border: 20px solid yellow;
+    background: yellow;
+}
+
+#green {
+    border: 20px solid green;
+    background: green;
+}
+
+#blue {
+    border: 20px solid blue;
+    background: blue;
+}
+
+#indigo {
+    border: 20px solid indigo;
+    background: indigo;
+}
+
+#violet {
+    border: 20px solid violet;
+    background: violet;
+}
