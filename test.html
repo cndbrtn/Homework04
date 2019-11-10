@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style type="text/css">
+#btn {
+    border: 0px;
+    border-radius: 20px;
+    background: #000;
+    color: #fff;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 18pt;
+    padding: 20px;
+}
+
+#btn:active {
+    color: #000;
+    background: #8000ff;
+}
+
+.radio {
+    height: 24px;
+    width: 24px;
+    background: #8000ff;
+    border-radius: 50%;
+    margin: 2px;
+    position: relative;
+}
+
+.radiobtn {
+    height: 10px;
+    width: 10px;
+    background: #8000ff;
+    border-radius: 50%;
+    position: absolute;
+    top: 7px;
+    left: 7px;
+}
+
+.radio:active {
+    background: #000;
+
+}
+
+.radiobtn:active {
+    background: #fff;
+}
+
+.radio:hover,
+.radiobtn:hover {
+    cursor: pointer;
+}
+
+</style>
+    <title>Document</title>
+</head>
+<body>
+    <button type="submit" id="btn">Start Quiz!</button>
+    <div class="radio">
+        <div class="radiobtn"></div>
+    </div>
+<!-- HEY THINK ABOUT MAYBE USING SPANS TO MAKE THE BUTTONS???? YOU HAD THIS IDEA LAST NIGHT -->
+    <script type="text/javascript">
+        var radiobtn = document.querySelector(".radiobtn");
+        var radiobg = "unselect";
+
+        radiobtn.addEventListener("click", function(){
+            if (radiobg === "unselect"){
+            radiobtn.setAttribute("style", "background: #fff");
+            radiobg = "select";
+            }
+            else {
+                radiobtn.setAttribute("style", "background: #8000ff");
+                radiobg = "unselect";
+            }
+        })
+    </script>
+</body>
+</html>

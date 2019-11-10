@@ -8,13 +8,13 @@ body {
 }
 
 h1 {
-    font-family: 'Monoton', cursive;
+    font-family: 'Press Start 2P', cursive;
     color: #ff0080;
 }
 
 #header {
     position: fixed;
-    top: 0px;
+    top: -20px;
     left: 10%;
 }
 .wrapper {
@@ -24,7 +24,7 @@ h1 {
     width: 70%;
 }
 
-.content {
+.title {
     text-align: center;
     padding: 100px 20px 100px 20px;
     margin: 0 auto;
@@ -32,6 +32,12 @@ h1 {
     border-radius: 25px;
     border: 5px solid #ffff00;
     margin-right: 40px;
+    min-width: 70%;
+}
+
+.container {
+    text-align: center;
+    padding: 20px;
 }
 .scorebox {
     float: right;
@@ -50,7 +56,9 @@ h1 {
     color: #000;
     font-family: 'Press Start 2P', cursive;
 }
-
+#startbtn:hover {
+    cursor: pointer;
+}
 #startbtn:active,
 #highbtn:active {
     background: #000;
@@ -66,6 +74,8 @@ h1 {
     background: #8000ff;
     color: #fff;
 }
+
+
 
 #red, 
 #orange, 
@@ -113,4 +123,34 @@ h1 {
 #violet {
     border: 20px solid violet;
     background: violet;
+}
+/* here's the styles for things we'll be adding */
+
+#adiv1, 
+#adiv2, 
+#adiv3, 
+#adiv4 {
+    width: 95%;
+    padding: 10px;
+    color: #fff;
+    font-family: 'Press Start 2P', 'Times New Roman', cursive;
+    margin-left: 20px;
+    text-align: left;
+}
+
+#adiv1:hover, 
+#adiv2:hover, 
+#adiv3:hover, 
+#adiv4:hover {
+    background: #ff0080;
+    color: #000;
+    cursor: pointer;
+}
+
+#adiv1:active, 
+#adiv2:active, 
+#adiv3:active, 
+#adiv4:active {
+    color: #ff0080;
+    background: #000;
 }
