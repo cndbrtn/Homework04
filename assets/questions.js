@@ -25,8 +25,8 @@ var questions = [
 
 {
     title: "5. How would you add/change text in a <p> tag?",
-    choices: ['setAttribute("value", "change text")', 'textContent("value", "change text")', 'textContent = "change text"', 'appendChild("change text")'],
-    answer: 'textContent = "change text"'
+    choices: ["setAttribute('value', 'change text')", "textContent('value', 'change text')", "textContent = 'change text'", "appendChild('change text')"],
+    answer: "textContent = 'change text'"
 }]
 
-console.log(questions)
+// console.log(questions)

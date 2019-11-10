@@ -10,17 +10,19 @@ body {
 h1 {
     font-family: 'Press Start 2P', cursive;
     color: #ff0080;
+    font-size: 22pt;
 }
 
 #header {
     position: fixed;
     top: -20px;
     left: 10%;
+    z-index: 2;
 }
 .wrapper {
     display: flex;
     margin-left: 20%;
-    margin-top: 5%;
+    margin-top: 6.5%;
     width: 70%;
 }
 
@@ -33,6 +35,7 @@ h1 {
     border: 5px solid #ffff00;
     margin-right: 40px;
     min-width: 70%;
+    position: relative;
 }
 
 .container {
@@ -41,7 +44,7 @@ h1 {
 }
 .scorebox {
     float: right;
-    padding: 40px;
+    padding: 20px;
     background: #8000ff;
     border: 5px solid #ffff00;
     border-radius: 25px;
@@ -74,8 +77,6 @@ h1 {
     background: #8000ff;
     color: #fff;
 }
-
-
 
 #red, 
 #orange, 
@@ -153,4 +154,19 @@ h1 {
 #adiv4:active {
     color: #ff0080;
     background: #000;
+}
+
+#countdiv {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    font-family: 'Press Start 2P', 'Times New Roman', sans-serif;
+    color: #ffff00;
+}
+
+#scorediv {
+    text-align: center;
+    font-family: 'Press Start 2P', 'Times New Roman', sans-serif;
+    color: #ffff00;
+    font-size: 14pt;
 }
