@@ -1,5 +1,5 @@
 body {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Press Start 2P', cursive;
     font-size: 16pt;
     background-image: url(./img/retro-bg.jpg);
     background-attachment: fixed;
@@ -8,9 +8,13 @@ body {
 }
 
 h1 {
-    font-family: 'Press Start 2P', cursive;
+
     color: #ff0080;
     font-size: 22pt;
+}
+
+span {
+    color: #ffff00;
 }
 
 #header {
@@ -76,6 +80,11 @@ h1 {
     font-family: 'Press Start 2P', cursive;
     background: #8000ff;
     color: #fff;
+}
+
+#highscore {
+    display: none;
+    text-align: center;
 }
 
 #red, 
@@ -160,13 +169,11 @@ h1 {
     position: absolute;
     bottom: 20px;
     right: 20px;
-    font-family: 'Press Start 2P', 'Times New Roman', sans-serif;
     color: #ffff00;
 }
 
 #scorediv {
     text-align: center;
-    font-family: 'Press Start 2P', 'Times New Roman', sans-serif;
     color: #ffff00;
     font-size: 14pt;
 }

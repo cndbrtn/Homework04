@@ -1,26 +1,26 @@
 var questions = [
 {
-    title: "1. How do you call a function?",
-    choices: ["functionName[]", "functionName{}", "functionName;", "functionName()"],
-    answer: "functionName()"
+    title: "1. How do you call a function named someFunction?",
+    choices: ["someFunction[]", "someFunction{}", "someFunction;", "someFunction()"],
+    answer: "someFunction()"
 },
 
 {
-    title: "2. What's the simplest way to grab different elements spanning classes and ids?",
+    title: "2. What can you use to grab an element by type, class, or id without changing functions?",
     choices: ["getElementbyId()", "querySelector()", "getElement()", "getElementsByClass()"],
     answer: "querySelector()"
 },
 
 { 
-    title: "3. If you console log var varName; what will you get?",
+    title: "3. If you console.log(varName) the variable var varName; what will you get?",
     choices: ["true", "null", "false", "undefined"],
     answer: "undefined"
 },
 
 {
     title: "4. What is the purpose of Math.floor()?",
-    choices: ["Generate even numbers", "Round up", "Round down", "Generate odd numbers"],
-    answer: "Round down"
+    choices: ["generate even numbers", "round up", "round down", "generate odd numbers"],
+    answer: "round down"
 },
 
 {

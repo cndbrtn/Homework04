@@ -1,3 +1,5 @@
+
+
 // Let's make a quiz! About JavaScript!
 
 // Let's make some variables!
@@ -8,10 +10,12 @@ var correct = {
     answer3: questions[2].answer, 
     answer4: questions[3].answer, 
     answer5: questions[4].answer
-    }
+}
 
 var score;
 var userChoice;
+var playerName;
+var playerScore;
 
 
 
@@ -35,16 +39,43 @@ var container = document.querySelector(".container");
 var rainbow = document.querySelector("#red");
 var scorebox = document.querySelector(".scorebox");
 var highbtn = document.querySelector("#highbtn");
-var scorediv = document.querySelector("#scorediv")
+var scorediv = document.querySelector("#scorediv");
+var highscore = document.querySelector("#highscore");
 
+console.log("get attribute test", highscore.getAttribute("style"))
 
 var adivArr = ["adiv1", "adiv2", "adiv3", "adiv4"];
 var i = 0;
 
-localStorage.getItem("Score");
-localStorage.getItem("Player Name");
+var prevPlayer = localStorage.getItem("PlayerName");
+var prevScore = localStorage.getItem("PlayerScore");
 
-function playGame() {
+
+function renderLastRegistered(){
+    if (prevPlayer === null || prevScore === null) {
+        return;
+    }
+
+    else {
+        document.querySelector("#highscore").textContent = prevPlayer + ": " + prevScore;
+    }
+}
+
+highbtn.addEventListener("click", function (event){
+    event.stopPropagation();
+    renderLastRegistered();
+    if (highscore.getAttribute("style") === "display: block;") {
+    document.querySelector("#highscore").setAttribute("style", "display: none;")
+    }
+    else {
+        document.querySelector("#highscore").setAttribute("style", "display: block;")
+    }
+});
+
+
+
+function playGame(event) {
+    event.stopPropagation();
     score = 0;
     
     // With this function the first thing it does is rewrite the html to give us questions[0]
@@ -74,16 +105,28 @@ function playGame() {
         document.querySelector("#countdiv").textContent = "Time Left: " + secondsLeft;
         if (secondsLeft === 0) {
             clearInterval(interval);
-            console.log("Game Over");
-            document.querySelector("#countdiv").textContent = "GAME OVER";
+            console.log("GAME OVER!");
+            h1El.textContent = "GAME OVER!"
+            title.removeChild(container);
+            document.querySelector("#countdiv").textContent = "Time Left: 0";
+            playerName = prompt("Enter your initials to save your score!")
+            playerScore = score;
+            localStorage.setItem("PlayerName", playerName);
+            localStorage.setItem("PlayerScore", playerScore);
         }
     }, 1000);
     
-    // Then a timeout to end the quiz and display score
-    setTimeout(function(){
-        console.log("Timeout complete")
-        h1El.textContent = "GAME OVER!"
-    }, 75000);
+    // // Then a timeout to end the quiz and display score
+    // setTimeout(function(){
+    //     console.log("Timeout complete")
+    //     h1El.textContent = "GAME OVER!";
+    //     title.removeChild(container);
+    //     document.querySelector("#countdiv").textContent = "Time Left: 0";
+    //     playerName = prompt("Enter your initials to save your score!");
+    //         playerScore = score;
+    //         localStorage.setItem("PlayerName", playerName);
+    //         localStorage.setItem("PlayerScore", playerScore);
+    //     }, 75000);
     
     // Next an eventListener for div clicks
     container.addEventListener("click", function(event){
@@ -124,22 +167,22 @@ function playGame() {
                 document.querySelector("#adiv4").textContent = questions[i].choices[3];
             }
 
-                if (i > 4) {
-                    h1El.textContent = "Game Over!"
-                    container.removeChild(document.querySelector("#adiv1"));
-                    container.removeChild(document.querySelector("#adiv2"));
-                    container.removeChild(document.querySelector("#adiv3"));
-                    container.removeChild(document.querySelector("#adiv4"));
+            if (i > 4) {
+                h1El.textContent = "GAME OVER!"
+                container.removeChild(document.querySelector("#adiv1"));
+                container.removeChild(document.querySelector("#adiv2"));
+                container.removeChild(document.querySelector("#adiv3"));
+                container.removeChild(document.querySelector("#adiv4"));
 
-                    document.querySelector("#countdiv").textContent = "You Finished!";
-                    document.querySelector("#scorediv").textContent = "Final score:" + score;
-                    clearInterval(interval);
-                    var playerName = prompt("Enter your initials to save your score!")
-                    localStorage.setItem("Score", score)
-                    localStorage.setItem("Player Name", playerName)
+                document.querySelector("#countdiv").textContent = "Seconds Left: 0";
+                document.querySelector("#scorediv").textContent = "Final score:" + score;
+                playerName = prompt("Enter your initials to save your score!")
+                playerScore = score;
+                localStorage.setItem("PlayerName", playerName);
+                localStorage.setItem("PlayerScore", playerScore);
+                clearInterval(interval);
+            }
 
-
-                }
 
             if (userChoice === correct.answer1 || userChoice === correct.answer2 || userChoice === correct.answer3 || userChoice === correct.answer4 || userChoice === correct.answer5) {
                 score = score + 20;
@@ -157,13 +200,11 @@ function playGame() {
                 console.log("seconds left: ", secondsLeft);
                 scorediv.textContent = "Your Score:" + score;
                 return score;
-            }
-
-            
-            
+            }            
         }
     })    
     scorediv.textContent = "Your Score:" + score;
 }
 
 startbtn.addEventListener("click", playGame);
+
