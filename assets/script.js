@@ -9,7 +9,6 @@ var correct = {
     answer4: questions[3].answer, 
     answer5: questions[4].answer
     }
-console.log(correct)
 
 var score;
 var userChoice;
@@ -42,9 +41,12 @@ var scorediv = document.querySelector("#scorediv")
 var adivArr = ["adiv1", "adiv2", "adiv3", "adiv4"];
 var i = 0;
 
+localStorage.getItem("Score");
+localStorage.getItem("Player Name");
+
 function playGame() {
     score = 0;
-    scorediv.textContent = "Your Score:" + score;
+    
     // With this function the first thing it does is rewrite the html to give us questions[0]
     h1El.textContent = questions[0].title;
     h1El.setAttribute("style", "font-family: 'Press Start 2P', 'Times New Roman', cursive;");
@@ -69,7 +71,6 @@ function playGame() {
     // First we need a timer with setInterval()
     var interval = setInterval(function(){
         secondsLeft--;
-        // console.log("tick: ", secondsLeft);
         document.querySelector("#countdiv").textContent = "Time Left: " + secondsLeft;
         if (secondsLeft === 0) {
             clearInterval(interval);
@@ -92,7 +93,8 @@ function playGame() {
         if (event.target.matches("div")) {
             i++;
             console.log(i)
-
+                // using i++ to advance i every time the click even happens I can shuffle 
+                // through the question sets. This took a lot of trial and error to arrive at
                 if (i === 1){
                 h1El.textContent = questions[i].title;
                 document.querySelector("#adiv1").textContent = questions[i].choices[0];
@@ -132,7 +134,9 @@ function playGame() {
                     document.querySelector("#countdiv").textContent = "You Finished!";
                     document.querySelector("#scorediv").textContent = "Final score:" + score;
                     clearInterval(interval);
-                    var userScore = prompt("Enter your initials to save your score!")
+                    var playerName = prompt("Enter your initials to save your score!")
+                    localStorage.setItem("Score", score)
+                    localStorage.setItem("Player Name", playerName)
 
 
                 }
@@ -141,6 +145,8 @@ function playGame() {
                 score = score + 20;
                 console.log("correct! you chose", userChoice);
                 console.log("score: ", score);
+                scorediv.textContent = "Your Score:" + score;
+                return score;
             }
             
             else {
@@ -148,75 +154,16 @@ function playGame() {
                 score = score - 10;
                 console.log("score: ", score);
                 secondsLeft = secondsLeft - 5;
-                console.log("seconds left: ", secondsLeft)
+                console.log("seconds left: ", secondsLeft);
+                scorediv.textContent = "Your Score:" + score;
+                return score;
             }
 
             
             
         }
     })    
+    scorediv.textContent = "Your Score:" + score;
 }
 
-// that timer needs to count down with the ability to remove time based on user input
-
-    // Then we need to keep score
-    // score is modified by user input based on correct or incorrect answers
-    // 10 questions worth max 10 points each to = 100
-    
-    // We need an event to start the game!
-    
-    startbtn.addEventListener("click", playGame);
-    // We need a series of questions
-    
-    // questions stored in questions.js
-    
-    // followed by events to track answers given via radio dial button thingie?
-    
-    // Then conditions to give points for correct answers
-    
-    // Or penalties for incorrect answers
-    
-    // Once complete we need something spit out score!
-    
-    // And finally something to store the user's score locally!
-
-
-
-
-
-
-
-
-
-
-    // // FUCKED UP CODE THAT DIDN'T WORK
-    // // THEN we add a div per answer using insertBefore 
-    // // (but we're inserting it before the "nextSibling" of the hiEl which doesn't exist so it's appending AFTER the h1El)
-    // // these are our div grabbers for our answers to go in
-    
-    // // var adiv2 = document.querySelector("#adiv2");
-    // // var adiv3 = document.querySelector("#adiv3");
-    
-    // // var answer1 = document.querySelector("#answer1"); // these are our text answer grabbers
-    // // var answer2 = document.querySelector("#answer2");
-    // // var answer3 = document.querySelector("#answer3");
-    // // var answer4 = document.querySelector("#answer4");
-    
-    // // adiv1.appendChild(pEl).id = "answer1";
-    // // title.insertBefore(answerdiv, adiv1.nextSibling).id = "adiv2";
-    // // title.insertBefore(answerdiv, adiv2.nextSibling).id = "adiv3";
-    // // title.insertBefore(answerdiv, adiv3.nextSibling).id = "adiv4";
-    
-    // // var adiv4 = document.querySelector("#adiv4");
-    
-    
-    
-    
-    
-    // // adiv1.appendChild(makeAnswerList);
-    // // answer1.setAttribute("type", "radio");
-    // // answer1.setAttribute("value", questions[0].choices[0]);
-    // // title.insertBefore(answer1P, answer1.nextSibling).id = "answer1P";
-    // var a1p = document.querySelector("#answer1P");
-    // var a1text = document.createTextNode(questions[0].choices[0]);
-    // // a1p.appendChild(a1text);
+startbtn.addEventListener("click", playGame);
