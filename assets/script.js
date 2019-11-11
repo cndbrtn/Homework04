@@ -109,12 +109,28 @@ function playGame(event) {
             clearInterval(interval);
             console.log("GAME OVER!");
             h1El.textContent = "GAME OVER!"
-            title.removeChild(container);
-            document.querySelector("#countdiv").textContent = "Time Left: 0";
-            playerName = prompt("Enter your initials to save your score!")
-            playerScore = score;
-            localStorage.setItem("PlayerName", playerName);
-            localStorage.setItem("PlayerScore", playerScore);
+            container.removeChild(document.querySelector("#adiv1"));
+            container.removeChild(document.querySelector("#adiv2"));
+            container.removeChild(document.querySelector("#adiv3"));
+            container.removeChild(document.querySelector("#adiv4"));
+            
+            document.querySelector("#countdiv").textContent = "Seconds Left: 0";
+            document.querySelector("#scorediv").textContent = "Final score:" + score;
+            clearInterval(interval);
+            container.appendChild(divElArr.div1).id = "restartdiv";
+            document.querySelector("#restartdiv").textContent = "Play Again?";
+            document.querySelector("#restartdiv").addEventListener("click", function(event){
+                event.stopPropagation();
+                location.reload();
+            });
+
+            setTimeout(() => {
+                playerName = prompt("Enter your initials to save your score!");
+                playerScore = score;
+                localStorage.setItem("PlayerName", playerName);
+                localStorage.setItem("PlayerScore", playerScore);
+                
+            }, 300);
             renderLastRegistered();
         }
     }, 1000);

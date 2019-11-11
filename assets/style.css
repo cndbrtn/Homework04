@@ -60,12 +60,14 @@ span {
     border-radius: 35px;
     padding: 30px 20px 30px 20px;
     font-size: 18pt;
-    background: #ee82ee;
+    background: #b038fc;
     color: #000;
     font-family: 'Press Start 2P', cursive;
 }
 #startbtn:hover {
     cursor: pointer;
+    background: url('img/spectrum.gif');
+    background-repeat: repeat;
 }
 #startbtn:active,
 #highbtn:active {
@@ -82,6 +84,7 @@ span {
     background: #ffff00;
     color: #000;
     margin-bottom: 20px;
+    cursor: pointer;
 }
 
 #highscore {
@@ -101,40 +104,40 @@ span {
 }
 
 #red {
-    border: 20px solid red;
+    border: 20px solid #eb46d1;
     width: 550px;
-    background: red;
+    background: #eb46d1;
     box-shadow: 0 0 5px #000;
 }
 
 #orange {
-    border: 20px solid orange;
-    background: orange;
+    border: 20px solid #e9d815;
+    background: #e9d815;
 }
 
 #yellow {
-    border: 20px solid yellow;
-    background: yellow;
+    border: 20px solid #17eec7;
+    background: #17eec7;
 }
 
 #green {
-    border: 20px solid green;
-    background: green;
+    border: 20px solid #b038fc;
+    background: #b038fc;
 }
 
 #blue {
-    border: 20px solid blue;
-    background: blue;
+    border: 20px solid #eb46d1;
+    background: #eb46d1;
 }
 
 #indigo {
-    border: 20px solid indigo;
-    background: indigo;
+    border: 20px solid #e9d815;
+    background: #e9d815;
 }
 
 #violet {
-    border: 20px solid violet;
-    background: violet;
+    border: 20px solid #17eec7;
+    background: #17eec7;
 }
 /* here's the styles for things we'll be adding */
 
@@ -156,11 +159,24 @@ span {
     margin: 0px;
 }
 
+#restartdiv:hover {
+    background: url('img/spectrum.gif');
+    background-repeat: repeat-x;
+    color: #000;
+    cursor: pointer;
+}
+
+#restartdiv:active {
+    background: url('img/spectrum.gif');
+    background-repeat: repeat-x;
+    color: #fff;
+    cursor: pointer;
+}
+
 #adiv1:hover, 
 #adiv2:hover, 
 #adiv3:hover, 
-#adiv4:hover, 
-#restartdiv:hover {
+#adiv4:hover {
     background: #ff0080;
     color: #000;
     cursor: pointer;
@@ -169,8 +185,7 @@ span {
 #adiv1:active, 
 #adiv2:active, 
 #adiv3:active, 
-#adiv4:active, 
-#restartdiv:active {
+#adiv4:active {
     color: #ff0080;
     background: #000;
 }
