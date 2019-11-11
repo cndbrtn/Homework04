@@ -28,3 +28,35 @@ var questions = [
     choices: ["setAttribute('value', 'change text')", "textContent('value', 'change text')", "textContent = 'change text'", "appendChild('change text')"],
     answer: "textContent = 'change text'"
 }]
+
+
+// questions2 = [
+//     {
+//         title: "",
+//         choices: ["", "", "", ""],
+//         answer: ""
+//     },
+    
+//     {
+//         title: "",
+//         choices: ["", "", "", ""],
+//         answer: ""
+//     },
+
+//     {
+//         title: "",
+//         choices: ["", "", "", ""],
+//         answer: ""
+//     },
+
+//     {
+//         title: "",
+//         choices: ["", "", "", ""],
+//         answer: ""
+//     },
+
+//     {
+//         title: "",
+//         choices: ["", "", "", ""],
+//         answer: ""
+//     }]

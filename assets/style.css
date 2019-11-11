@@ -25,9 +25,10 @@ span {
 }
 .wrapper {
     display: flex;
-    margin-left: 20%;
+    margin-left: 10%;
     margin-top: 6.5%;
     width: 70%;
+    position: relative;
 }
 
 .title {
@@ -53,6 +54,7 @@ span {
     border: 5px solid #ffff00;
     border-radius: 25px;
     height: 200px;
+    margin-top: 200px;
 }
 
 #startbtn {
@@ -75,6 +77,31 @@ span {
     color: #fff;
 }
 
+#jsquizbnt,
+#cutequizbtn {
+    border: none;
+    border-radius: 20px;
+    padding: 20px;
+    font-size: 16pt;
+    font-family: 'Press Start 2P', cursive;
+    color: #000;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+#jsquizbtn {
+    background: #eb46d1;
+}
+
+#cutequizbtn {
+    background: #ffff00;
+}
+
+#jsquizbnt:hover,
+#cutequizbtn:hover {
+    background: url('images/spectrum.gif');
+}
+
 #highbtn {
     border: none;
     border-radius: 20px;
@@ -95,17 +122,14 @@ span {
 #red, 
 #orange, 
 #yellow, 
-#green, 
-#blue, 
-#indigo, 
-#violet {
+#green {
     border-radius: 35px;
     margin: 0 auto;
 }
 
 #red {
     border: 20px solid #eb46d1;
-    width: 550px;
+    width: 90%;
     background: #eb46d1;
     box-shadow: 0 0 5px #000;
 }
@@ -125,20 +149,6 @@ span {
     background: #b038fc;
 }
 
-#blue {
-    border: 20px solid #eb46d1;
-    background: #eb46d1;
-}
-
-#indigo {
-    border: 20px solid #e9d815;
-    background: #e9d815;
-}
-
-#violet {
-    border: 20px solid #17eec7;
-    background: #17eec7;
-}
 /* here's the styles for things we'll be adding */
 
 #adiv1, 
@@ -202,3 +212,60 @@ span {
     color: #ffff00;
     font-size: 14pt;
 }
+@media only screen and (min-width: 768px ){
+
+}
+@media only screen and (min-width: 150px) and (max-width: 767px) {
+    body, 
+    html {
+        background: url('img/retro-mobile.jpg');
+        width: 100%;
+        background-attachment: fixed;
+        background-size: cover;
+    }
+    #red {
+        width: 90%;
+    }
+
+    .wrapper {
+        display: flex;
+        flex-direction: column;
+        margin-left: 15%;
+        text-align: center;
+    }
+    .title {
+        padding: 100px 0 100px 0;
+        margin-right: 10px;
+        
+    }
+    .container {
+        padding: 10px;
+    }
+    .scorebox {
+        float: none;
+        margin-top: 20px;
+        min-width: 70%;;
+    }
+}
+
+/* 
+@media only screen and (max-width: 424px) {
+    #red {
+        width: 90%;
+    }
+
+    .wrapper {
+        width: 95%;
+    }
+    .title {
+        padding: 200px 0 100px 0;
+        margin-right: 10px;
+        width: 90%;
+    }
+    .container {
+        padding: 10px;
+        width: 100%;
+        float: left;
+    }
+
+} */
