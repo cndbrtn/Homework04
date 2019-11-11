@@ -12,7 +12,7 @@ var questions = [
 },
 
 { 
-    title: "3. If you console.log(varName) the variable var varName; what will you get?",
+    title: "3. If you console log the variable var varName; what will you get?",
     choices: ["true", "null", "false", "undefined"],
     answer: "undefined"
 },
@@ -32,26 +32,26 @@ var questions = [
 
 // questions2 = [
 //     {
-//         title: "",
-//         choices: ["", "", "", ""],
-//         answer: ""
+//         title: "Who's the cutest dog in the world?",
+//         choices: ["Gertie", "Gertie ", "Gertie", "Gertie"],
+//         answer: "Gertie"
 //     },
     
 //     {
-//         title: "",
-//         choices: ["", "", "", ""],
-//         answer: ""
+//         title: "Who's the most handsome cat in the world?",
+//         choices: ["Orson", "Heathcliff", "Garfield", "Sylvester"],
+//         answer: "Orson"
 //     },
 
 //     {
-//         title: "",
-//         choices: ["", "", "", ""],
-//         answer: ""
+//         title: "What is Gertie's favorite food",
+//         choices: ["Rosy Maple", "Bully sticks", "Her own toes", "Poop"],
+//         answer: "Poop"
 //     },
 
 //     {
-//         title: "",
-//         choices: ["", "", "", ""],
+//         title: "Who is Gertie's best friend?",
+//         choices: ["Orson", "Maddy", "", ""],
 //         answer: ""
 //     },
 
