@@ -52,6 +52,7 @@ span {
     background: #8000ff;
     border: 5px solid #ffff00;
     border-radius: 25px;
+    height: 200px;
 }
 
 #startbtn {
@@ -78,14 +79,15 @@ span {
     padding: 20px;
     font-size: 16pt;
     font-family: 'Press Start 2P', cursive;
-    background: #8000ff;
-    color: #fff;
+    background: #ffff00;
+    color: #000;
+    margin-bottom: 20px;
 }
 
 #highscore {
-    display: none;
     text-align: center;
 }
+
 
 #red, 
 #orange, 
@@ -139,7 +141,8 @@ span {
 #adiv1, 
 #adiv2, 
 #adiv3, 
-#adiv4 {
+#adiv4, 
+#restartdiv {
     width: 95%;
     padding: 10px;
     color: #fff;
@@ -148,10 +151,16 @@ span {
     text-align: left;
 }
 
+#restartdiv {
+    text-align: center;
+    margin: 0px;
+}
+
 #adiv1:hover, 
 #adiv2:hover, 
 #adiv3:hover, 
-#adiv4:hover {
+#adiv4:hover, 
+#restartdiv:hover {
     background: #ff0080;
     color: #000;
     cursor: pointer;
@@ -160,7 +169,8 @@ span {
 #adiv1:active, 
 #adiv2:active, 
 #adiv3:active, 
-#adiv4:active {
+#adiv4:active, 
+#restartdiv:active {
     color: #ff0080;
     background: #000;
 }

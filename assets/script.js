@@ -49,6 +49,7 @@ var i = 0;
 
 var prevPlayer = localStorage.getItem("PlayerName");
 var prevScore = localStorage.getItem("PlayerScore");
+renderLastRegistered();
 
 
 function renderLastRegistered(){
@@ -60,6 +61,7 @@ function renderLastRegistered(){
         document.querySelector("#highscore").textContent = prevPlayer + ": " + prevScore;
     }
 }
+
 
 highbtn.addEventListener("click", function (event){
     event.stopPropagation();
@@ -99,7 +101,7 @@ function playGame(event) {
     title.appendChild(divElArr.countdiv).id = "countdiv";
     
     
-    // First we need a timer with setInterval()
+    // we need a timer with setInterval()
     var interval = setInterval(function(){
         secondsLeft--;
         document.querySelector("#countdiv").textContent = "Time Left: " + secondsLeft;
@@ -113,20 +115,9 @@ function playGame(event) {
             playerScore = score;
             localStorage.setItem("PlayerName", playerName);
             localStorage.setItem("PlayerScore", playerScore);
+            renderLastRegistered();
         }
     }, 1000);
-    
-    // // Then a timeout to end the quiz and display score
-    // setTimeout(function(){
-    //     console.log("Timeout complete")
-    //     h1El.textContent = "GAME OVER!";
-    //     title.removeChild(container);
-    //     document.querySelector("#countdiv").textContent = "Time Left: 0";
-    //     playerName = prompt("Enter your initials to save your score!");
-    //         playerScore = score;
-    //         localStorage.setItem("PlayerName", playerName);
-    //         localStorage.setItem("PlayerScore", playerScore);
-    //     }, 75000);
     
     // Next an eventListener for div clicks
     container.addEventListener("click", function(event){
@@ -173,14 +164,24 @@ function playGame(event) {
                 container.removeChild(document.querySelector("#adiv2"));
                 container.removeChild(document.querySelector("#adiv3"));
                 container.removeChild(document.querySelector("#adiv4"));
-
+                
                 document.querySelector("#countdiv").textContent = "Seconds Left: 0";
                 document.querySelector("#scorediv").textContent = "Final score:" + score;
-                playerName = prompt("Enter your initials to save your score!")
-                playerScore = score;
-                localStorage.setItem("PlayerName", playerName);
-                localStorage.setItem("PlayerScore", playerScore);
                 clearInterval(interval);
+                container.appendChild(divElArr.div1).id = "restartdiv";
+                document.querySelector("#restartdiv").textContent = "Play Again?";
+                document.querySelector("#restartdiv").addEventListener("click", function(event){
+                    event.stopPropagation();
+                    location.reload();
+                });
+
+                setTimeout(() => {
+                    playerName = prompt("Enter your initials to save your score!");
+                    playerScore = score;
+                    localStorage.setItem("PlayerName", playerName);
+                    localStorage.setItem("PlayerScore", playerScore);
+                    
+                }, 300);
             }
 
 
@@ -207,4 +208,6 @@ function playGame(event) {
 }
 
 startbtn.addEventListener("click", playGame);
+
+
 
