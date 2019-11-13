@@ -251,15 +251,15 @@ span {
         flex-direction: column;
     }
 
+    .container {
+        padding: 0px;
+    }
+
     .container, 
     .title, 
     .scorebox {
         width: auto;
         align-self: center;
-    }
-
-    .title { 
-        margin-right: 0px;;
     }
 
     .scorebox {
@@ -269,6 +269,18 @@ span {
     
     #red {
         width: 90%;
+    }
+
+    #header {
+        top: 20px;
+    }
+
+    #adiv1, 
+    #adiv2, 
+    #adiv3, 
+    #adiv4, 
+    #restartdiv {
+        margin: 0;
     }
 
     #adiv1, 
