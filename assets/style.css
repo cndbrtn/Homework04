@@ -62,6 +62,11 @@ span {
     height: 200px;
     margin-top: 200px;
 }
+#audiocorrect, 
+#audiowrong {
+   visibility: hidden;
+}
+
 
 #startbtn {
     border: none;
@@ -97,6 +102,7 @@ span {
 
 #jsquizbtn {
     background: #eb46d1;
+    font-family: 'Press Start 2P', 'Times New Roman', sans-serif;
 }
 
 #cutequizbtn {

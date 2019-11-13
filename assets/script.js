@@ -42,8 +42,9 @@ var highbtn = document.querySelector("#highbtn");
 var scorediv = document.querySelector("#scorediv");
 var highscore = document.querySelector("#highscore");
 
-console.log("get attribute test", highscore.getAttribute("style"))
-
+/* my solution for needing each one of these to be targetable individually
+   later on so I can replace their contents with new choices for each question
+   and I'm sure there's a more elegant solution but I haven't found it yet*/
 var adivArr = ["adiv1", "adiv2", "adiv3", "adiv4"];
 var i = 0;
 
@@ -74,6 +75,15 @@ highbtn.addEventListener("click", function (event){
     }
 });
 
+function correctSound() {
+    let sound = document.querySelector("#audiocorrect");
+    sound.play();
+}
+
+function incorrectSound() {
+    let sound = document.querySelector("#audiowrong");
+    sound.play();
+}
 
 
 function playGame(event) {
@@ -86,6 +96,9 @@ function playGame(event) {
     // then remove the rainbow container with the start quiz button
     container.removeChild(rainbow);
     // then add all the new content somehow from the question array
+
+    /* I'm not sure how to do this in a for loop when they all need to be different ids so that they can
+    be grabbed separately */
     container.appendChild(divElArr.div1).id = "adiv1";
     document.querySelector("#adiv1").textContent = questions[0].choices[0];
     container.appendChild(divElArr.div2).id = "adiv2";
@@ -107,14 +120,14 @@ function playGame(event) {
         if (secondsLeft === 0) {
             clearInterval(interval);
             console.log("GAME OVER!");
-           document.querySelector("#countdiv").textContent = "Seconds Left: 0";
-                document.querySelector("#scorediv").textContent = "Final score:" + score;
-                clearInterval(interval);
-                container.appendChild(divElArr.div1).id = "restartdiv";
-                document.querySelector("#restartdiv").textContent = "Play Again?";
-                document.querySelector("#restartdiv").addEventListener("click", function(event){
-                    event.stopPropagation();
-                    location.reload();
+            document.querySelector("#countdiv").textContent = "Seconds Left: 0";
+            document.querySelector("#scorediv").textContent = "Final score:" + score;
+            clearInterval(interval);
+            container.appendChild(divElArr.div1).id = "restartdiv";
+            document.querySelector("#restartdiv").textContent = "Play Again?";
+            document.querySelector("#restartdiv").addEventListener("click", function(event){
+            event.stopPropagation();
+            location.reload();
                 });
 
                 setTimeout(() => {
@@ -189,13 +202,15 @@ function playGame(event) {
                     playerScore = score;
                     localStorage.setItem("PlayerName", playerName);
                     localStorage.setItem("PlayerScore", playerScore);
+                    renderLastRegistered();
                     
-                }, 300);
+                }, 500);
             }
 
 
             if (userChoice === correct.answer1 || userChoice === correct.answer2 || userChoice === correct.answer3 || userChoice === correct.answer4 || userChoice === correct.answer5) {
                 score = score + 20;
+                correctSound();
                 console.log("correct! you chose", userChoice);
                 console.log("score: ", score);
                 scorediv.textContent = "Your Score:" + score;
@@ -205,6 +220,7 @@ function playGame(event) {
             else {
                 console.log("worng!")
                 score = score - 10;
+                incorrectSound();
                 console.log("score: ", score);
                 secondsLeft = secondsLeft - 5;
                 console.log("seconds left: ", secondsLeft);
