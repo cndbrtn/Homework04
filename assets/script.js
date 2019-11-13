@@ -82,8 +82,7 @@ function playGame(event) {
     
     // With this function the first thing it does is rewrite the html to give us questions[0]
     h1El.textContent = questions[0].title;
-    h1El.setAttribute("style", "font-family: 'Press Start 2P', 'Times New Roman', cursive;");
-    h1El.setAttribute("style", "font-size: 18pt;");
+    h1El.id = "h1El"
     // then remove the rainbow container with the start quiz button
     container.removeChild(rainbow);
     // then add all the new content somehow from the question array
@@ -108,29 +107,23 @@ function playGame(event) {
         if (secondsLeft === 0) {
             clearInterval(interval);
             console.log("GAME OVER!");
-            h1El.textContent = "GAME OVER!"
-            container.removeChild(document.querySelector("#adiv1"));
-            container.removeChild(document.querySelector("#adiv2"));
-            container.removeChild(document.querySelector("#adiv3"));
-            container.removeChild(document.querySelector("#adiv4"));
-            
-            document.querySelector("#countdiv").textContent = "Seconds Left: 0";
-            document.querySelector("#scorediv").textContent = "Final score:" + score;
-            clearInterval(interval);
-            container.appendChild(divElArr.div1).id = "restartdiv";
-            document.querySelector("#restartdiv").textContent = "Play Again?";
-            document.querySelector("#restartdiv").addEventListener("click", function(event){
-                event.stopPropagation();
-                location.reload();
-            });
+           document.querySelector("#countdiv").textContent = "Seconds Left: 0";
+                document.querySelector("#scorediv").textContent = "Final score:" + score;
+                clearInterval(interval);
+                container.appendChild(divElArr.div1).id = "restartdiv";
+                document.querySelector("#restartdiv").textContent = "Play Again?";
+                document.querySelector("#restartdiv").addEventListener("click", function(event){
+                    event.stopPropagation();
+                    location.reload();
+                });
 
-            setTimeout(() => {
-                playerName = prompt("Enter your initials to save your score!");
-                playerScore = score;
-                localStorage.setItem("PlayerName", playerName);
-                localStorage.setItem("PlayerScore", playerScore);
-                
-            }, 300);
+                setTimeout(() => {
+                    playerName = prompt("Enter your initials to save your score!");
+                    playerScore = score;
+                    localStorage.setItem("PlayerName", playerName);
+                    localStorage.setItem("PlayerScore", playerScore);
+                    
+                }, 300);
             renderLastRegistered();
         }
     }, 1000);

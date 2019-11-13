@@ -156,6 +156,10 @@ span {
 }
 
 /* here's the styles for things we'll be adding */
+#h1El {
+    font-size: 14pt;
+    font-family: 'Press Start 2P', 'Times New Roman', cursive;
+}
 
 #adiv1, 
 #adiv2, 
@@ -236,6 +240,11 @@ span {
         height: 100%;
     } 
 
+    #h1El {
+        font-size: 10pt;
+        font-family: 'Press Start 2P', 'Times New Roman', cursive;
+    }
+
     .wrapper {
         width: 80%;
         display: flex;
@@ -246,6 +255,11 @@ span {
     .title, 
     .scorebox {
         width: auto;
+        align-self: center;
+    }
+
+    .title { 
+        margin-right: 0px;;
     }
 
     .scorebox {
@@ -266,11 +280,24 @@ span {
     #startbtn, 
     #jsquizbtn, 
     #cutequizbtn, 
+    #countdiv,
+    #scorediv {
+        font-size: 10pt;
+    }
+
     h1 {
-        font-size: 12pt;
+        font-size: 10pt;
+    }
+
+    #red, 
+    #orange, 
+    #yellow, 
+    #green {
+        border: 10px solid #8000ff;
+        box-shadow: none;
+        padding: 0px;
     }
 }
-
 @media only screen and (min-width: 426px) and (max-width: 767px) {
     body {
         background: url('img/retro-mobile.jpg');
