@@ -51,12 +51,12 @@ var questions = [
 
 //     {
 //         title: "Who is Gertie's best friend?",
-//         choices: ["Orson", "Maddy", "", ""],
-//         answer: ""
+//         choices: ["Orson", "Maddy", "Rosy Maple", "Momma"],
+//         answer: "Rosy Maple"
 //     },
 
 //     {
-//         title: "",
-//         choices: ["", "", "", ""],
+//         title: "What kind of toe beans does Gertie have?",
+//         choices: ["Little dainty", "Big fat", "Small tiny", "No beans"],
 //         answer: ""
 //     }]
