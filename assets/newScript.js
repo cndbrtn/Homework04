@@ -93,7 +93,8 @@ function playGame(event) {
     document.querySelector("#jsquizbtn").textContent = "JavaScript Quiz";
     document.querySelector("#gertiequizbtn").textContent = "Gertie Quiz";
 
-    document.querySelector("#jsquizbtn").addEventListener("click", function() {
+    document.querySelector("#jsquizbtn").addEventListener("click", function(event) {
+        event.stopPropagation();
         score = 0;
         
         var interval = setInterval(function(){
@@ -114,6 +115,7 @@ function playGame(event) {
                 document.querySelector("#restart").className = "choicebtn"
                 document.querySelector("#restart").textContent = "Play Again?";
                 document.querySelector("#restart").addEventListener("click", function(event){
+                    userChoice = null;
                     event.stopPropagation();
                     location.reload();
                 });
@@ -204,6 +206,7 @@ function playGame(event) {
                     document.querySelector("#restart").textContent = "Play Again?";
                     document.querySelector("#restart").addEventListener("click", function(event){
                         event.stopPropagation();
+                        userChoice = null;
                         location.reload();
                     });
     
@@ -226,6 +229,10 @@ function playGame(event) {
                     scorediv.textContent = "Your Score:" + score;
                     return score;
                 }
+
+                if (userChoice === null) {
+                    return;
+                }
                 
                 else {
                     console.log("worng!")
@@ -243,7 +250,8 @@ function playGame(event) {
         
     })
 
-    document.querySelector("#gertiequizbtn").addEventListener("click", function() {
+    document.querySelector("#gertiequizbtn").addEventListener("click", function(event) {
+        event.stopPropagation();
         score = 0;
         
         var interval = setInterval(function(){
