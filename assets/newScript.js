@@ -115,7 +115,6 @@ function playGame(event) {
                 document.querySelector("#restart").className = "choicebtn"
                 document.querySelector("#restart").textContent = "Play Again?";
                 document.querySelector("#restart").addEventListener("click", function(event){
-                    // userChoice = null;
                     event.stopPropagation();
                     location.reload();
                 });
@@ -139,7 +138,7 @@ function playGame(event) {
         container.removeChild(document.querySelector("#gertiequizbtn"));
 
 
-        // then add all the new content somehow from the question array
+        // then add all the new content
         
         
         for (let i = 0; i < questions[0].choices.length; i++) {
@@ -154,7 +153,7 @@ function playGame(event) {
         title.appendChild(divEl).id = "count";
     
     
-        // Next an eventListener for div clicks
+        // Next an eventListener for button clicks
         container.addEventListener("click", function(event){
             event.stopPropagation();
             console.log(event);
@@ -206,7 +205,6 @@ function playGame(event) {
                     document.querySelector("#restart").textContent = "Play Again?";
                     document.querySelector("#restart").addEventListener("click", function(event){
                         event.stopPropagation();
-                        // userChoice = null;
                         location.reload();
                     });
     
@@ -230,10 +228,6 @@ function playGame(event) {
                     return score;
                 }
 
-                // if (userChoice === null) {
-                //     return;
-                // }
-                
                 else {
                     console.log("worng!")
                     score = score - 10;
@@ -273,7 +267,6 @@ function playGame(event) {
                 document.querySelector("#restart").textContent = "Play Again?";
                 document.querySelector("#restart").addEventListener("click", function(event){
                     event.stopPropagation();
-                    // userChoice = null;
                     location.reload();
                 });
                 // did this to allow the GAME OVER screen (including final score) to load before the alert pops up
@@ -311,7 +304,7 @@ function playGame(event) {
         title.appendChild(divEl).id = "count";
     
     
-        // Next an eventListener for div clicks
+        // Next an eventListener for button clicks
         container.addEventListener("click", function(event){
             event.stopPropagation();
             console.log(event);
@@ -362,7 +355,6 @@ function playGame(event) {
                     document.querySelector("#restart").textContent = "Play Again?";
                     document.querySelector("#restart").addEventListener("click", function(event){
                         event.stopPropagation();
-                        // userChoice = null;
                         location.reload();
                     });
     
@@ -385,10 +377,6 @@ function playGame(event) {
                     scorediv.textContent = "Your Score:" + score;
                     return score;
                 }
-
-                // if (userChoice === null) {
-                //     return;
-                // }
                 
                 else {
                     console.log("worng!")
