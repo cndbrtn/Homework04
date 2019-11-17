@@ -273,6 +273,7 @@ function playGame(event) {
                 document.querySelector("#restart").textContent = "Play Again?";
                 document.querySelector("#restart").addEventListener("click", function(event){
                     event.stopPropagation();
+                    userChoice = null;
                     location.reload();
                 });
                 // did this to allow the GAME OVER screen (including final score) to load before the alert pops up
@@ -353,7 +354,6 @@ function playGame(event) {
                     for (var i = 0; i < buttonId.length; i++) {
                     container.removeChild(document.querySelector(buttonId[i]));
                     }
-                    
                     document.querySelector("#count").textContent = "Seconds Left: 0";
                     document.querySelector("#score").textContent = "Your score:" + score;
                     clearInterval(interval);
@@ -362,6 +362,7 @@ function playGame(event) {
                     document.querySelector("#restart").textContent = "Play Again?";
                     document.querySelector("#restart").addEventListener("click", function(event){
                         event.stopPropagation();
+                        userChoice = null;
                         location.reload();
                     });
     
@@ -383,6 +384,10 @@ function playGame(event) {
                     console.log("score: ", score);
                     scorediv.textContent = "Your Score:" + score;
                     return score;
+                }
+                
+                if (userChoice === null) {
+                    return;
                 }
                 
                 else {
