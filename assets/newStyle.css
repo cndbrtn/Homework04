@@ -271,12 +271,15 @@ h1 {
     .choicebtn, 
     #restart, 
     #highbtn, 
-    #startbtn, 
-    #jsquizbtn, 
-    #cutequizbtn, 
     #count,
     #score {
         font-size: 8pt;
+    }
+
+    #startbtn, 
+    #jsquizbtn, 
+    #gertiequizbtn {
+        font-size: 10pt;
     }
 
     h1 {
