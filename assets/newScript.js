@@ -84,8 +84,9 @@ function incorrectSound() {
 function playGame(event) {
     event.stopPropagation();
 
-    // then remove the rainbow container with the start quiz button
+    // remove the rainbow container with the start quiz button
     container.removeChild(rainbow);   
+    // first new screen is a choice between two quizes!
     h1El.textContent = "Choose Your Quiz!" 
     container.appendChild(document.createElement("button")).id = "jsquizbtn";
     container.appendChild(document.createElement("br"));
@@ -93,16 +94,16 @@ function playGame(event) {
     document.querySelector("#jsquizbtn").textContent = "JavaScript Quiz";
     document.querySelector("#gertiequizbtn").textContent = "Gertie Quiz";
 
+    // if you click the JavaScript Quiz button you get this
     document.querySelector("#jsquizbtn").addEventListener("click", function(event) {
         event.stopPropagation();
         score = 0;
-        
+        // setInterval to count down the seconds left
         var interval = setInterval(function(){
             secondsLeft--;
             document.querySelector("#count").textContent = "Time Left: " + secondsLeft;
             if (secondsLeft === 0) {
                 clearInterval(interval);
-                // console.log("GAME OVER!");
                 h1El.textContent = "GAME OVER!";
                 var buttonId = ["#btn1", "#btn2", "#btn3", "#btn4"];
                 for (var i = 0; i < buttonId.length; i++) {
@@ -164,7 +165,7 @@ function playGame(event) {
                 console.log(click)
                 var buttonId = ["#btn1", "#btn2", "#btn3", "#btn4"]
                 /* using ++ to advance 'click' every time the click event happens I can shuffle 
-                 through the question sets. This took a lot of trial and error to arrive at */
+                 through the question sets */
                     if (click === 1){
                     h1El.textContent = questions[click].title;
                     for (var i = 0; i < questions[click].choices.length; i++) {
@@ -208,7 +209,7 @@ function playGame(event) {
                         location.reload();
                     });
     
-                    setTimeout(function () {
+                    setTimeout(function() {
                         playerName = prompt("Enter your initials to save your score!");
                         playerScore = score;
                         localStorage.setItem("PlayerName", playerName);
@@ -218,7 +219,7 @@ function playGame(event) {
                     }, 500);
                 }
     
-    
+                // here's how we validate for correct answers
                 if (userChoice === correct1.answer1 || userChoice === correct1.answer2 || userChoice === correct1.answer3 || userChoice === correct1.answer4 || userChoice === correct1.answer5) {
                     score = score + 20;
                     correctSound();
@@ -243,11 +244,11 @@ function playGame(event) {
         scorediv.textContent = "Your Score:" + score;
         
     })
-
+    // event listener for the Gertie quiz
     document.querySelector("#gertiequizbtn").addEventListener("click", function(event) {
         event.stopPropagation();
         score = 0;
-        
+        // set the interval to count down
         var interval = setInterval(function(){
             secondsLeft--;
             document.querySelector("#count").textContent = "Time Left: " + secondsLeft;
@@ -282,14 +283,14 @@ function playGame(event) {
         }, 1000);
         
     
-        // rewrite the html to give us questions[0]
+        // rewrite the html to give us questions2[0]
         h1El.textContent = questions2[0].title;
         h1El.id = "h1El"
         container.removeChild(document.querySelector("#jsquizbtn"));
         container.removeChild(document.querySelector("#gertiequizbtn"));
 
 
-        // then add all the new content somehow from the question array
+        // then add all the new content\
         
         
         for (let i = 0; i < questions2[0].choices.length; i++) {
@@ -314,8 +315,7 @@ function playGame(event) {
                 click++;
                 console.log(click)
                 var buttonId = ["#btn1", "#btn2", "#btn3", "#btn4"]
-                /* using ++ to advance 'click' every time the click event happens I can shuffle 
-                 through the question sets. This took a lot of trial and error to arrive at */
+                    // just the same setup as last time but with questions2 as our questions object
                     if (click === 1){
                     h1El.textContent = questions2[click].title;
                     for (var i = 0; i < questions2[click].choices.length; i++) {
@@ -368,7 +368,7 @@ function playGame(event) {
                     }, 500);
                 }
     
-    
+                // choice validation
                 if (userChoice === correct2.answer1 || userChoice === correct2.answer2 || userChoice === correct2.answer3 || userChoice === correct2.answer4 || userChoice === correct2.answer5) {
                     score = score + 20;
                     correctSound();
@@ -395,7 +395,9 @@ function playGame(event) {
 
 }
 
+// and here's how we get started, with a click!
 startbtn.addEventListener("click", playGame);
 
 
 
+// THE END!
