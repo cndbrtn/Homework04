@@ -18,19 +18,6 @@ var playerName;
 var playerScore;
 
 
-
-// element creators
-var divElArr = {
-    div1: document.createElement("div"),
-    div2: document.createElement("div"),
-    div3: document.createElement("div"),
-    div4: document.createElement("div"),
-    countdiv: document.createElement("div")
-}
-
-// this creates a <div> to put each <p> answer in
-var pEl = document.createElement("p"); // this creates a new <p> to put the answer in
-
 // element grabbers
 var startbtn = document.querySelector("#startbtn"); // this grabs the start button for the click eventListener
 var title = document.querySelector(".title");  // this is the main content div
@@ -43,8 +30,16 @@ var scorediv = document.querySelector("#scorediv");
 var highscore = document.querySelector("#highscore");
 
 /* my solution for needing each one of these to be targetable individually
-   later on so I can replace their contents with new choices for each question
-   and I'm sure there's a more elegant solution but I haven't found it yet*/
+later on so I can replace their contents with new choices for each question
+and I'm sure there's a more elegant solution but I haven't found it yet*/
+// element creators
+var divElArr = {
+    div1: document.createElement("div"),
+    div2: document.createElement("div"),
+    div3: document.createElement("div"),
+    div4: document.createElement("div"),
+    countdiv: document.createElement("div")
+}
 var adivArr = ["adiv1", "adiv2", "adiv3", "adiv4"];
 var i = 0;
 
@@ -98,7 +93,17 @@ function playGame(event) {
     // then add all the new content somehow from the question array
 
     /* I'm not sure how to do this in a for loop when they all need to be different ids so that they can
-    be grabbed separately */
+    be grabbed separately. And I tried everything I could think of to make these be buttons intead of divs for
+    accessibility reasons but I absolutely could not get data- to work on them to make them (potentially) selectable separately later, 
+    and trying to add different ids to them in a nested loop sounds like a headache waiting to happen. Trying to add a data- attribute
+    broke everything no matter what I did and I ABSOLUTELY could not work around by removing all the buttons with the
+    choices in them and re-making/appending them with the new set of choices because I couldn't remove them all, just the first one, 
+    even with a for loop, so the new buttons were just appending onto the old ones and stacking up and honestly it made me feel so stupid I 
+    had to ctrl+z back to where things were working with divs because I was about to have a breakdown. I tried EVERYTHING I could think of.
+    JavaScript was going great until now and I'm questioning if I've been an idiot this whole time and just THOUGHT js was making sense. 
+    I feel really stupid and discouraged. I wanted this to be as clean and clear and simple as I could make it and I'm really disappointed 
+    that this awful mess is the best I was able to do. It works but I'll probably lose points for doing everything is a dumb workaround way and 
+    I've lost momentum */
     container.appendChild(divElArr.div1).id = "adiv1";
     document.querySelector("#adiv1").textContent = questions[0].choices[0];
     container.appendChild(divElArr.div2).id = "adiv2";
@@ -130,7 +135,7 @@ function playGame(event) {
             location.reload();
                 });
 
-                setTimeout(() => {
+                setTimeout(function() {
                     playerName = prompt("Enter your initials to save your score!");
                     playerScore = score;
                     localStorage.setItem("PlayerName", playerName);

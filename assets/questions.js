@@ -30,33 +30,33 @@ var questions = [
 }]
 
 
-// questions2 = [
-//     {
-//         title: "Who's the cutest dog in the world?",
-//         choices: ["Gertie", "Gertie ", "Gertie", "Gertie"],
-//         answer: "Gertie"
-//     },
+questions2 = [
+    {
+        title: "Who's the cutest dog in the world?",
+        choices: ["Gertie", "Gertie ", "Gertie", "Gertie"],
+        answer: "Gertie"
+    },
     
-//     {
-//         title: "Who's the most handsome cat in the world?",
-//         choices: ["Orson", "Heathcliff", "Garfield", "Sylvester"],
-//         answer: "Orson"
-//     },
+    {
+        title: "Who's the most handsome cat in the world?",
+        choices: ["Orson", "Heathcliff", "Garfield", "Sylvester"],
+        answer: "Orson"
+    },
 
-//     {
-//         title: "What is Gertie's favorite food",
-//         choices: ["Rosy Maple", "Bully sticks", "Her own toes", "Poop"],
-//         answer: "Poop"
-//     },
+    {
+        title: "What is Gertie's favorite food",
+        choices: ["Rosy Maple", "Bully sticks", "Her own toes", "Poop"],
+        answer: "Poop"
+    },
 
-//     {
-//         title: "Who is Gertie's best friend?",
-//         choices: ["Orson", "Maddy", "Rosy Maple", "Momma"],
-//         answer: "Rosy Maple"
-//     },
+    {
+        title: "Who is Gertie's best friend?",
+        choices: ["Orson", "Maddy", "Rosy Maple", "Momma"],
+        answer: "Rosy Maple"
+    },
 
-//     {
-//         title: "What kind of toe beans does Gertie have?",
-//         choices: ["Little dainty", "Big fat", "Small tiny", "No beans"],
-//         answer: ""
-//     }]
+    {
+        title: "What kind of toe beans does Gertie have?",
+        choices: ["Little dainty", "Big fat", "Small tiny", "No beans"],
+        answer: "Big fat"
+    }]

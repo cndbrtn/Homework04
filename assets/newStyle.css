@@ -1,6 +1,6 @@
 body {
     font-family: 'Press Start 2P', cursive;
-    font-size: 16pt;
+    font-size: 12pt;
     background-image: url(./img/retro-bg.jpg);
     background-attachment: fixed;
     background-repeat: no-repeat;
@@ -11,10 +11,6 @@ h1 {
 
     color: #ff0080;
     font-size: 22pt;
-}
-
-span {
-    color: #ffff00;
 }
 
 #header {
@@ -33,29 +29,29 @@ span {
     display: flex;
     margin-left: 10%;
     margin-top: 6.5%;
-    width: 70%;
+    width: 60%;
     position: relative;
 }
 
 .title {
     text-align: center;
-    padding: 100px 20px 100px 20px;
+    padding: 100px 10px 100px 10px;
     margin: 0 auto;
     background: #8000ff;
     border-radius: 25px;
     border: 5px solid #ffff00;
     margin-right: 20px;
-    min-width: 70%;
+    min-width: 90%;
     position: relative;
 }
 
 .container {
     text-align: center;
-    padding: 20px;
 }
+
 .scorebox {
     float: right;
-    padding: 20px;
+    padding: 10px;
     background: #8000ff;
     border: 5px solid #ffff00;
     border-radius: 25px;
@@ -67,7 +63,7 @@ span {
     border: none;
     border-radius: 35px;
     padding: 30px 20px 30px 20px;
-    font-size: 18pt;
+    font-size: 14pt;
     background: #b038fc;
     color: #000;
     font-family: 'Press Start 2P', cursive;
@@ -83,8 +79,8 @@ span {
     color: #fff;
 }
 
-#jsquizbnt,
-#cutequizbtn {
+#jsquizbtn,
+#gertiequizbtn {
     border: none;
     border-radius: 20px;
     padding: 20px;
@@ -100,20 +96,20 @@ span {
     font-family: 'Press Start 2P', 'Times New Roman', sans-serif;
 }
 
-#cutequizbtn {
+#gertiequizbtn {
     background: #ffff00;
 }
 
-#jsquizbnt:hover,
-#cutequizbtn:hover {
-    background: url('images/spectrum.gif');
+#jsquizbtn:hover,
+#gertiequizbtn:hover {
+    background: url('img/spectrum.gif');
 }
 
 #highbtn {
     border: none;
     border-radius: 20px;
-    padding: 20px;
-    font-size: 16pt;
+    padding: 10px;
+    font-size: 10pt;
     font-family: 'Press Start 2P', cursive;
     background: #ffff00;
     color: #000;
@@ -126,32 +122,32 @@ span {
 }
 
 
-#red, 
-#orange, 
-#yellow, 
-#green {
+#rainbow1, 
+#rainbow2, 
+#rainbow3, 
+#rainbow4 {
     border-radius: 35px;
     margin: 0 auto;
 }
 
-#red {
+#rainbow1 {
     border: 20px solid #eb46d1;
-    width: 90%;
+    width: 80%;
     background: #eb46d1;
-    box-shadow: 0 0 5px #000;
+    box-shadow: 0 0 50px #aeff5e;
 }
 
-#orange {
+#rainbow2 {
     border: 20px solid #e9d815;
     background: #e9d815;
 }
 
-#yellow {
+#rainbow3 {
     border: 20px solid #17eec7;
     background: #17eec7;
 }
 
-#green {
+#rainbow4 {
     border: 20px solid #b038fc;
     background: #b038fc;
 }
@@ -162,70 +158,61 @@ span {
     font-family: 'Press Start 2P', 'Times New Roman', cursive;
 }
 
-#adiv1, 
-#adiv2, 
-#adiv3, 
-#adiv4, 
-#restartdiv {
+.choicebtn {
     width: 95%;
-    padding: 10px;
+    padding: 10px 0 10px 0;
     color: #fff;
     font-family: 'Press Start 2P', 'Times New Roman', cursive;
-    margin-left: 20px;
+    font-size: 14pt;
     text-align: left;
+    border: 0px;
+    background: none;
+
 }
 
-#restartdiv {
-    text-align: center;
-    margin: 0px;
-}
-
-#restartdiv:hover {
-    background: url('img/spectrum.gif');
-    background-repeat: repeat-x;
-    color: #000;
-    cursor: pointer;
-}
-
-#restartdiv:active {
-    background: url('img/spectrum.gif');
-    background-repeat: repeat-x;
-    color: #fff;
-    cursor: pointer;
-}
-
-#adiv1:hover, 
-#adiv2:hover, 
-#adiv3:hover, 
-#adiv4:hover {
+.choicebtn:hover {
     background: #ff0080;
     color: #000;
     cursor: pointer;
 }
 
-#adiv1:active, 
-#adiv2:active, 
-#adiv3:active, 
-#adiv4:active {
+.choicebtn:active {
     color: #ff0080;
     background: #000;
 }
 
-#countdiv {
+#restart {
+    text-align: center;
+    margin-top: 10px;
+}
+
+#restart:hover {
+    background: url('img/spectrum.gif');
+    background-repeat: repeat-x;
+    color: #000;
+    cursor: pointer;
+}
+
+#restart:active {
+    background: url('img/spectrum.gif');
+    background-repeat: repeat-x;
+    color: #fff;
+    cursor: pointer;
+}
+
+
+#count {
     position: absolute;
     bottom: 20px;
     right: 20px;
     color: #ffff00;
 }
 
-#scorediv {
+#score {
     text-align: center;
     color: #ffff00;
-    font-size: 14pt;
+    font-size: 12pt;
 }
-/* @media only screen and (min-width: 768px){
-
-} */
 
 @media only screen and (min-width: 150px) and (max-width: 425px) {
     body {
@@ -247,9 +234,9 @@ span {
     }
 
     .wrapper {
-        width: 80%;
-        display: flex;
+        width: 90%;
         flex-direction: column;
+        margin-left: 8.5%;
     }
 
     .container {
@@ -263,55 +250,40 @@ span {
         align-self: center;
     }
 
+    .title {
+        padding: 100px 5px 50px 5px;
+    }
+
     .scorebox {
         margin-top: 20px;
         text-align: center;
         height: auto;
     }
     
-    #red {
-        width: 90%;
+    #rainbow1 {
+        width: auto;
     }
 
     #header {
         top: 20px;
     }
 
-    #adiv1, 
-    #adiv2, 
-    #adiv3, 
-    #adiv4, 
-    #restartdiv {
-        margin: 0;
-    }
-
-    #adiv1, 
-    #adiv2, 
-    #adiv3, 
-    #adiv4, 
-    #restartdiv, 
+    .choicebtn, 
+    #restart, 
     #highbtn, 
     #startbtn, 
     #jsquizbtn, 
     #cutequizbtn, 
-    #countdiv,
-    #scorediv {
-        font-size: 10pt;
+    #count,
+    #score {
+        font-size: 8pt;
     }
 
     h1 {
-        font-size: 10pt;
-    }
-
-    #red, 
-    #orange, 
-    #yellow, 
-    #green {
-        border: 10px solid #8000ff;
-        box-shadow: none;
-        padding: 0px;
+        font-size: 9pt;
     }
 }
+
 @media only screen and (min-width: 426px) and (max-width: 767px) {
     body {
         background: url('img/retro-mobile.jpg');
@@ -326,12 +298,11 @@ span {
         height: 100%;
     }    
 
-    #red {
-        width: 90%;
+    #rainbow1 {
+        width: auto;
     }
 
     .wrapper {
-        display: flex;
         flex-direction: column;
         margin-left: 10%;
         text-align: center;
@@ -349,25 +320,3 @@ span {
         margin-top: 20px;
     }
 }
-
-/* 
-@media only screen and (max-width: 424px) {
-    #red {
-        width: 90%;
-    }
-
-    .wrapper {
-        width: 95%;
-    }
-    .title {
-        padding: 200px 0 100px 0;
-        margin-right: 10px;
-        width: 90%;
-    }
-    .container {
-        padding: 10px;
-        width: 100%;
-        float: left;
-    }
-
-} */
