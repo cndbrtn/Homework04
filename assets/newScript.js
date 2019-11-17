@@ -102,7 +102,8 @@ function playGame(event) {
             if (secondsLeft === 0) {
                 clearInterval(interval);
                 // console.log("GAME OVER!");
-                var buttonId = ["#btn1", "#btn2", "#btn3", "#btn4"]
+                h1El.textContent = "GAME OVER!";
+                var buttonId = ["#btn1", "#btn2", "#btn3", "#btn4"];
                 for (var i = 0; i < buttonId.length; i++) {
                     container.removeChild(document.querySelector(buttonId[i]))
                 }
