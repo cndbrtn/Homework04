@@ -115,7 +115,7 @@ function playGame(event) {
                 document.querySelector("#restart").className = "choicebtn"
                 document.querySelector("#restart").textContent = "Play Again?";
                 document.querySelector("#restart").addEventListener("click", function(event){
-                    userChoice = null;
+                    // userChoice = null;
                     event.stopPropagation();
                     location.reload();
                 });
@@ -206,7 +206,7 @@ function playGame(event) {
                     document.querySelector("#restart").textContent = "Play Again?";
                     document.querySelector("#restart").addEventListener("click", function(event){
                         event.stopPropagation();
-                        userChoice = null;
+                        // userChoice = null;
                         location.reload();
                     });
     
@@ -230,9 +230,9 @@ function playGame(event) {
                     return score;
                 }
 
-                if (userChoice === null) {
-                    return;
-                }
+                // if (userChoice === null) {
+                //     return;
+                // }
                 
                 else {
                     console.log("worng!")
@@ -273,7 +273,7 @@ function playGame(event) {
                 document.querySelector("#restart").textContent = "Play Again?";
                 document.querySelector("#restart").addEventListener("click", function(event){
                     event.stopPropagation();
-                    userChoice = null;
+                    // userChoice = null;
                     location.reload();
                 });
                 // did this to allow the GAME OVER screen (including final score) to load before the alert pops up
@@ -362,7 +362,7 @@ function playGame(event) {
                     document.querySelector("#restart").textContent = "Play Again?";
                     document.querySelector("#restart").addEventListener("click", function(event){
                         event.stopPropagation();
-                        userChoice = null;
+                        // userChoice = null;
                         location.reload();
                     });
     
@@ -385,10 +385,10 @@ function playGame(event) {
                     scorediv.textContent = "Your Score:" + score;
                     return score;
                 }
-                
-                if (userChoice === null) {
-                    return;
-                }
+
+                // if (userChoice === null) {
+                //     return;
+                // }
                 
                 else {
                     console.log("worng!")
